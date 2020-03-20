@@ -51,10 +51,9 @@
     <Compile Include="Repository\AbstractDapperRepo.cs" />
     <Compile Include="Repository\DapperRepository.cs" />
     <Compile Include="Repository\IDbConncection.cs" />
+    <Compile Include="SqlQuery\QueryWarehouse.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SqlQuery\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
