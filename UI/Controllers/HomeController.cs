@@ -30,7 +30,20 @@ namespace UI.Controllers
             return View(GetEmployees());
         }
 
+        [HttpGet]
+        public ActionResult CreateEmployee()
+        {
+            return View();
+        }
 
+        [HttpPost] //veriinin geldiği yer
+        public ActionResult CreateEmployee(Employee model)
+        {
+            model.DateOfBirth = Convert.ToDateTime(model.DateOfBirth.ToShortDateString());
+            model.StartDate = DateTime.Now;
+            MvcDBHelper.Repository.Insert(QueryWarehouse.Employee.Insert, model);
+            return View();
+        }
         #endregion
 
 

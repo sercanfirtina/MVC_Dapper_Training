@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "CreateEmployee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="margin-left:5%; margin-top:5%">CreateEmployee</h2>
+
+@model Entity.Employee
+
+<div class="col-md-8 col-sm-12 col-lg-6" style="margin-left:10%">
+    @using (Html.BeginForm("CreateEmployee", "Home", FormMethod.Post))
+    {
+        <div class="card border-dark">
+            <div class="card-header bg-dark text-white">
+                Add New Employee
+            </div>
+
+            <div class="card-body">
+                @* form Begin *@
+
+                <form class="col-md-10">
+                    <div class="form-row">
+                        <div class="col-md-10">
+                            <label>@Html.DisplayFor(model => model.FirstName)</label>
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @placeholder = "İsim Yazınız" })
+                        </div>
+
+                        <div class="col-md-10">
+                            <label>@Html.DisplayFor(model => model.LastName)</label>
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "Soyisim Yazınız" })
+                        </div>
+
+                        <div class="col-md-10">
+                            <label>@Html.DisplayFor(model => model.DateOfBirth)</label>
+                            @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", @placeholder = "Yaş Yazınız" })
+                        </div>
+
+                        <div class="col-md-10">
+                            <label>@Html.DisplayFor(model => model.Email)</label>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Mail Yazınız" })
+                        </div>
+
+                        <div class="col-md-10">
+                            <label>@Html.DisplayFor(model => model.Department)</label>
+                            @Html.TextBoxFor(m => m.Department, new { @class = "form-control", @placeholder = "Departman Yazınız" })
+                        </div>
+
+                        <div class="col-md-10">
+                            <label>@Html.DisplayFor(model => model.PhoneNumber)</label>
+                            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @placeholder = "Telefon Yazınız" })
+                        </div>
+                    </div>
+
+                    <div class="col-md-10" style="margin-top:3%!important">
+                        <button class="btn btn-success" type="submit">Kaydet</button>
+                        <span style="margin-left:20%">
+                            @Html.ActionLink("Listeye Dön", "Index", null, new { @class = "btn btn-primary" })
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    }
+</div>
+
