@@ -229,6 +229,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\_partialEmployeeList.cshtml" />
     <Content Include="Views\Home\CreateEmployee.cshtml" />
+    <Content Include="Views\Home\DetailsEmployee.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -43,7 +43,7 @@ namespace Entity.SqlQuery
                                                 [City]         = @City
                                                 where Id=@ID";                
                                                                
-            public static string Delete => "delete from employee with(nolock) where Id=@Id";
+            public static string Delete => "delete from employee where Id=@Id";
             public static string GetAll => "select * from employee with(nolock)"; //deadlock problem solved
             public static string GetById => "select * from employee with(nolock) where Id=@Id";
         }

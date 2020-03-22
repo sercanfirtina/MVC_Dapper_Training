@@ -44,6 +44,22 @@ namespace UI.Controllers
             MvcDBHelper.Repository.Insert(QueryWarehouse.Employee.Insert, model);
             return View();
         }
+
+        public ActionResult DeleteEmployee(int Id)
+        {
+            Employee model = new Employee() { Id = Id };
+
+            MvcDBHelper.Repository.Delete<Employee>(QueryWarehouse.Employee.Delete, model);
+            return RedirectToAction("Index");
+        }
+
+
+        [HttpGet]
+        public ActionResult DetailsEmployee(int Id)
+        {
+            var model = MvcDBHelper.Repository.GetById<Employee>(QueryWarehouse.Employee.GetById, new { Id=Id}).FirstOrDefault();
+            return View(model);
+        }
         #endregion
 
 
